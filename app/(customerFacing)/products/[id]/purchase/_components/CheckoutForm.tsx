@@ -103,7 +103,7 @@ function Form({
           return_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/stripe/purchase-success`,
         },
       })
-      .then(({ error }: any) => {
+      .then(({ error }) => {
         if (error.type === "card_error" || error.type === "validation_error") {
           setErrorMessage(error.message);
         } else {

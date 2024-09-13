@@ -1,7 +1,9 @@
 import { unstable_cache as nextCache } from "next/cache";
 import { cache as reactCache } from "react";
 
-type Callback = (...args: any[]) => Promise<any>;
+// تحديد نوع دالة كـ Callback التي تأخذ معلمات من أي نوع وتعيد Promise
+type Callback<T = any, R = any> = (...args: T[]) => Promise<R>;
+
 export function cache<T extends Callback>(
   cb: T,
   keyParts: string[],
