@@ -22,7 +22,7 @@ export function ActiveToggleDropdownItem({
       disabled={isPending}
       onClick={() => {
         startTransition(async () => {
-          await toggleProductAvailability(id, !isAvailableForPurchase);
+          await toggleProductAvailability(id);
           router.refresh();
         });
       }}
